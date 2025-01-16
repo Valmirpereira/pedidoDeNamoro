@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de namoro</title>
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Define 100% da altura da janela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-family: Arial, sans-serif;
+    background-color: #fc9393; /* Cor de fundo da página */
+    background-image: url(/background_body.jpg); /* Caminho da imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem no fundo */
+}
+
+.painel{
+    margin: auto;
+    background-color: white; /* Cor do background do painel */
+    width: 500px;  /* Largura do painel */
+    height: 500px; /* Altura do painel */
+    border-radius: 20px;  /* Raio da borda*/
+    text-align: center; /* Centralizar o texto no painel */
+    padding-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sim{
+    height: 40px;
+    width: 60px;
+    background-color: #f13232;
+    border: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-left: -60px;
+    cursor: pointer;
+    border-color: white;
+}
+
+#nao{
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    background-color: #f13232;
+    border: 2px white;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+}
+    </style>
+
+</head>
+<body>
+    
+    <div class="painel">
+
+        <h1>Nome da futura namorada</h1>
+
+        <img src="/ursinho-fofo-apaixonado.gif" alt="">
+
+        <h2>Aceita namorar comigo?</h2>
+
+        <a href="https://www.youtube.com/watch?v=EAPtHzNcFDs&list=RDEMr4Kcw_L7XUisaRzaWwW5rA&index=9"><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+
+    </div>
+
+    
+    <script>
+    function fuja(){
+        var botaoNao = document.getElementById("nao")
+
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
+
+        var maxX = larguraJanela - botaoNao.offsetWidth;
+        var maxY = alturaJanela - botaoNao.offsetHeight;
+
+        var aleatorioX = Math.floor(Math.random() * maxX);
+        var aleatorioY = Math.floor(Math.random() * maxY);
+
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+}
+
+    </script>
+
+</body>
+</html>
